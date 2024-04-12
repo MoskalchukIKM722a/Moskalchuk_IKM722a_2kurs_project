@@ -13,6 +13,7 @@ namespace Moskalchuk_IKM722a_2kurs_project
     public partial class Form1 : Form
     {
         private bool Mode;
+        private MajorWorks MajorObject;
         public Form1()
         {
             InitializeComponent();
@@ -28,6 +29,10 @@ namespace Moskalchuk_IKM722a_2kurs_project
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            About A = new About(); 
+            A.tAbout.Start();
+            A.ShowDialog();
+            MajorObject = new MajorWorks();
             this.Mode = true;
         }
 
@@ -47,6 +52,9 @@ namespace Moskalchuk_IKM722a_2kurs_project
                 tClock.Stop();
                 bStart.Text = "Start";// зміна тексту на кнопці на "Пуск"
                 this.Mode = true;
+                MajorObject.Write(tbInput.Text);
+                MajorObject.Task();
+                label1.Text = MajorObject.Read();
             }
         }
 
