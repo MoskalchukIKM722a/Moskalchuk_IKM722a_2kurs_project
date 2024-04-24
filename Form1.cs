@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 namespace Moskalchuk_IKM722a_2kurs_project
 {
@@ -47,6 +48,7 @@ namespace Moskalchuk_IKM722a_2kurs_project
                 tClock.Start();
                 bStart.Text = "Stop"; // зміна тексту на кнопці на "Стоп"
                 this.Mode = false;
+                startToolStripMenuItem.Text = "Stop";
             }
             else
             {
@@ -57,6 +59,7 @@ namespace Moskalchuk_IKM722a_2kurs_project
                 MajorObject.Write(tbInput.Text);
                 MajorObject.Task();
                 label1.Text = MajorObject.Read();
+                startToolStripMenuItem.Text = "Старт";
             }
         }
 
@@ -83,6 +86,57 @@ namespace Moskalchuk_IKM722a_2kurs_project
             string s;
             s = (System.DateTime.Now - MajorObject.GetTime()).ToString();
             MessageBox.Show(s, "During the program "); 
+        }
+
+        private void onDrivesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string[] disks = System.IO.Directory.GetLogicalDrives(); // Строковий масив з логічніх дисків
+             string disk = "";
+            foreach (string diskPath in disks)
+            {
+                try
+                {
+                    System.IO.DriveInfo drive = new System.IO.DriveInfo(diskPath);
+                    long totalSizeGB = drive.TotalSize / (1024 * 1024 * 1024); // Переведення у ГБ
+                    long freeSpaceGB = drive.TotalFreeSpace / (1024 * 1024 * 1024); // Переведення у ГБ
+                    disk += $"{drive.Name} - {totalSizeGB} GB - {freeSpaceGB} GB{(char)13}";
+                }
+            
+                catch
+                {
+                    disk += $"{diskPath} - don't ready{(char)13}"; // якщо пристрій не готовий,
+                                                                   // то виведення на екран ім’я пристрою і повідомлення «не готовий»
+                }
+            }
+
+            MessageBox.Show(disk, "Disks");
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void aboutProgramToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About A = new About();
+            A.ShowDialog();
+        }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (sfdSave.ShowDialog() == DialogResult.OK)// Виклик діалогового вікна збереження файлу
+{
+                MessageBox.Show(sfdSave.FileName);
+            }
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ofdOpen.ShowDialog() == DialogResult.OK) // Виклик діалогового вікна відкриття файлу
+
+                MessageBox.Show(ofdOpen.FileName);
+            
         }
     }
 }
