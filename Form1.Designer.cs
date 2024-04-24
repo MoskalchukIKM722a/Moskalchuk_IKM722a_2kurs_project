@@ -61,7 +61,6 @@
             this.tbInput.Name = "tbInput";
             this.tbInput.Size = new System.Drawing.Size(223, 20);
             this.tbInput.TabIndex = 2;
-            //this.tbInput.TextChanged += new System.EventHandler(this.tbInput_TextChanged);
             this.tbInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbInput_KeyPress);
             // 
             // tClock
@@ -79,6 +78,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

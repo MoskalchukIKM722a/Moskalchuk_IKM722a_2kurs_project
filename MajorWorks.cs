@@ -8,9 +8,18 @@ namespace Moskalchuk_IKM722a_2kurs_project
 {
     internal class MajorWorks
     {
+        private System.DateTime TimeBegin;
         private string Data; 
         private string Result;
 
+        public void SetTime() 
+        {
+            this.TimeBegin = System.DateTime.Now;
+        }
+        public System.DateTime GetTime() // Метод отримання часу завершення програми
+        {
+            return this.TimeBegin;
+        }
         public void Write(string D)
         {
             this.Data = D;
