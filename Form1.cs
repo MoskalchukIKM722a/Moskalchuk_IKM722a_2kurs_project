@@ -35,7 +35,6 @@ namespace Moskalchuk_IKM722a_2kurs_project
             About A = new About(); 
             A.tAbout.Start();
             A.ShowDialog();
-            MajorObject = new MajorWorks();
             this.Mode = true;
         }
 
