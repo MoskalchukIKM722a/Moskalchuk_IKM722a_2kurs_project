@@ -41,16 +41,7 @@ namespace Moskalchuk_IKM722a_2kurs_project
 
         private void bStart_Click(object sender, EventArgs e)
         {
-            if (Mode)
-            {
-                tbInput.Enabled = true;// Режим дозволу
-                tbInput.Focus();
-                tClock.Start();
-                bStart.Text = "Stop"; // зміна тексту на кнопці на "Стоп"
-                this.Mode = false;
-                startToolStripMenuItem.Text = "Stop";
-            }
-            else
+            if (!Mode)
             {
                 tbInput.Enabled = false;// Режим заборони введення
                 tClock.Stop();
@@ -59,7 +50,16 @@ namespace Moskalchuk_IKM722a_2kurs_project
                 MajorObject.Write(tbInput.Text);
                 MajorObject.Task();
                 label1.Text = MajorObject.Read();
-                startToolStripMenuItem.Text = "Старт";
+                startToolStripMenuItem.Text = "Start";
+            }
+            else
+            {
+                tbInput.Enabled = true;// Режим дозволу
+                tbInput.Focus();
+                tClock.Start();
+                bStart.Text = "Stop"; // зміна тексту на кнопці на "Стоп"
+                this.Mode = false;
+                startToolStripMenuItem.Text = "Stop";
             }
         }
 
@@ -125,9 +125,10 @@ namespace Moskalchuk_IKM722a_2kurs_project
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (sfdSave.ShowDialog() == DialogResult.OK)// Виклик діалогового вікна збереження файлу
+            if (sfdSave.ShowDialog() == DialogResult.OK) // Виклик діалогу збереження файлу
             {
-                MajorObject.WriteSaveFileName(sfdSave.FileName); // написання імені файлу
+                MajorObject.WriteSaveFileName(sfdSave.FileName); // Запис імені файлу для збереження
+                MajorObject.Generator();
                 MajorObject.SaveToFile(); // метод збереження в файл
             }
         }
@@ -138,6 +139,40 @@ namespace Moskalchuk_IKM722a_2kurs_project
 
                 MessageBox.Show(ofdOpen.FileName);
             
+        }
+
+        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MajorObject.SaveFileNameExists()) // задане ім’я файлу існує?
+                MajorObject.SaveToFile(); // зберегти дані в файл
+            else
+                saveAsToolStripMenuItem_Click(sender, e); //
+        }
+
+        private void startToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MajorObject.NewRec();
+            tbInput.Clear();// очистити вміст тексту
+            label1.Text = "";
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MajorObject.Modify)
+                if (MessageBox.Show("Don't save!!. Continue out?", "ATTENTION",
+                MessageBoxButtons.YesNo) == DialogResult.No)
+                    e.Cancel = true; // припинити закриття
         }
     }
 }

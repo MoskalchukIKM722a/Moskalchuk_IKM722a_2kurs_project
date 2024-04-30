@@ -113,6 +113,7 @@
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
             // 
             // mewToolStripMenuItem
             // 
@@ -120,7 +121,7 @@
             this.mewToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.mewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mewToolStripMenuItem.Text = "New";
-            this.mewToolStripMenuItem.Click += new System.EventHandler(this.bStart_Click);
+            this.mewToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -146,6 +147,7 @@
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
@@ -183,6 +185,7 @@
             this.startToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F9;
             this.startToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.startToolStripMenuItem.Text = "Start";
+            this.startToolStripMenuItem.Click += new System.EventHandler(this.startToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
@@ -214,10 +217,12 @@
             // ofdOpen
             // 
             this.ofdOpen.FileName = "openFileDialog1";
+            this.ofdOpen.Filter = "work files|*.SoM|All filles|*.*";
             // 
             // sfdSave
             // 
             this.sfdSave.FileName = "saveFileDialog";
+            this.sfdSave.Filter = "work files|*.SoM|All filles|*.*";
             // 
             // Form1
             // 
@@ -231,6 +236,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);

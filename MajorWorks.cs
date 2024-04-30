@@ -71,6 +71,7 @@ namespace Moskalchuk_IKM722a_2kurs_project
                 D.Data = this.Data;
                 D.Result = Convert.ToString(this.Result);
                 D.Key = Key;
+                Key++;
                 BinaryFormatter BF = new BinaryFormatter(); // створення об'єкта для форматування
                 BF.Serialize(S, D);
                 S.Flush(); // очищення буфера потоку
@@ -80,8 +81,81 @@ namespace Moskalchuk_IKM722a_2kurs_project
             catch
             {
 
-                MessageBox.Show("Помилка роботи з файлом"); // Виведення на екран повідомлення "Помилка роботи з файлом"
+                MessageBox.Show("Error working with file"); // Виведення на екран повідомлення "Помилка роботи з файлом"
             }
+        }
+
+        public void ReadFromFile(System.Windows.Forms.DataGridView DG) // зчитування з файлу
+        {
+            try
+            {
+                if (!File.Exists(this.OpenFileName))
+                {
+                    MessageBox.Show("Don't have file"); // Виведення на екран повідомлення "файлу немає"
+                    return;
+                }
+                Stream S; // створення потоку
+                S = File.Open(this.OpenFileName, FileMode.Open); // зчитування даних з
+                Buffer D;
+                object O; // буферна змінна для контролю формату
+                BinaryFormatter BF = new BinaryFormatter(); // створення об'єкту для форматування
+
+                while (S.Position < S.Length)
+                {
+                    O = BF.Deserialize(S); // десеріалізація
+                    D = O as Buffer;
+                    if (D == null) break;
+                    // Виведення даних на екран
+                }
+                S.Close(); // закриття
+            }
+            catch
+            {
+                MessageBox.Show("Error file"); // Виведення на екран повідомлення "Помилка файлу"
+            }
+        } // ReadFromFile закінчився
+
+        public void Generator() // метод формування ключового поля
+        {
+            try
+            {
+                if (!File.Exists(this.SaveFileName)) // існує файл?
+                {
+                    Key = 1;
+                    return;
+                }
+                Stream S; // створення потоку
+                S = File.Open(this.SaveFileName, FileMode.Open); // Відкриття файлу
+                Buffer D;
+                object O; // буферна змінна для контролю формату
+                BinaryFormatter BF = new BinaryFormatter(); // створення елементу для форматування
+                while (S.Position < S.Length)
+                {
+                    O = BF.Deserialize(S);
+                    D = O as Buffer;
+                    if (D == null) break;
+                    Key = D.Key;
+                }
+                Key++;
+                S.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Помилка файлу"); // Виведення на екран повідомлення "Помилка файлу"
+            }
+        }
+
+        public bool SaveFileNameExists()
+        {
+            if (this.SaveFileName == null)
+                return false;
+            else return true;
+        }
+
+        public void NewRec() // новий запис
+        {
+            this.Data = ""; // "" - ознака порожнього рядка
+            this.Result = null; // для string- null
         }
     }
 }
