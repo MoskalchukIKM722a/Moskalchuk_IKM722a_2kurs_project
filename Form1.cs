@@ -32,6 +32,7 @@ namespace Moskalchuk_IKM722a_2kurs_project
         {
             MajorObject = new MajorWorks();
             MajorObject.SetTime();
+            MajorObject.Modify = false;// заборона запису
             About A = new About(); 
             A.tAbout.Start();
             A.ShowDialog();
@@ -125,8 +126,9 @@ namespace Moskalchuk_IKM722a_2kurs_project
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (sfdSave.ShowDialog() == DialogResult.OK)// Виклик діалогового вікна збереження файлу
-{
-                MessageBox.Show(sfdSave.FileName);
+            {
+                MajorObject.WriteSaveFileName(sfdSave.FileName); // написання імені файлу
+                MajorObject.SaveToFile(); // метод збереження в файл
             }
         }
 
