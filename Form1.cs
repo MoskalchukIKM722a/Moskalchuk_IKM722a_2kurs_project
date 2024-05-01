@@ -136,8 +136,11 @@ namespace Moskalchuk_IKM722a_2kurs_project
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (ofdOpen.ShowDialog() == DialogResult.OK) // Виклик діалогового вікна відкриття файлу
-
-                MessageBox.Show(ofdOpen.FileName);
+            {
+                MajorObject.WriteOpenFileName(ofdOpen.FileName); // відкриття файлу M
+                MajorObject.ReadFromFile(dgwOpen); // читання даних з файлу
+            }
+               MessageBox.Show(ofdOpen.FileName);
             
         }
 
@@ -173,6 +176,11 @@ namespace Moskalchuk_IKM722a_2kurs_project
                 if (MessageBox.Show("Don't save!!. Continue out?", "ATTENTION",
                 MessageBoxButtons.YesNo) == DialogResult.No)
                     e.Cancel = true; // припинити закриття
+        }
+
+        private void bSearch_Click(object sender, EventArgs e)
+        {
+            MajorObject.Find(textBox1.Text); //пошук
         }
     }
 }
