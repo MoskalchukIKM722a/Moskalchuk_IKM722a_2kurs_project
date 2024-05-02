@@ -64,8 +64,11 @@ namespace Moskalchuk_IKM722a_2kurs_project
             {
                 Stream S; // створення потоку
                 if (File.Exists(this.SaveFileName))// існує файл?
+                {    
                     S = File.Open(this.SaveFileName, FileMode.Append);// Відкриття файлу для збереження
+                }
                 else
+                { 
                     S = File.Open(this.SaveFileName, FileMode.Create);// створити файл
                 Buffer D = new Buffer(); // створення буферної змінної
                 D.Data = this.Data;
@@ -77,10 +80,10 @@ namespace Moskalchuk_IKM722a_2kurs_project
                 S.Flush(); // очищення буфера потоку
                 S.Close(); // закриття потоку
                 this.Modify = false; // Заборона повторного запису
+                }
             }
             catch
             {
-
                 MessageBox.Show("Error working with file"); // Виведення на екран повідомлення "Помилка роботи з файлом"
             }
         }
@@ -116,7 +119,7 @@ namespace Moskalchuk_IKM722a_2kurs_project
                     // Виведення даних на екран
                     System.Data.DataRow MR;
                     MR = MT.NewRow();
-                    MR["Kye"] = D.Key; // Занесення в таблицю номер
+                    MR["Key"] = D.Key; // Занесення в таблицю номер
                     MR["Input data"] = D.Data; // Занесення в таблицю вхідних даних
                     MR["Result"] = D.Result; // Занесення в таблицю результатів
                     MT.Rows.Add(MR);
@@ -156,7 +159,7 @@ namespace Moskalchuk_IKM722a_2kurs_project
             }
             catch
             {
-                MessageBox.Show("Помилка файлу"); // Виведення на екран повідомлення "Помилка файлу"
+                MessageBox.Show("Error file"); // Виведення на екран повідомлення "Помилка файлу"
             }
         }
 
@@ -206,13 +209,11 @@ namespace Moskalchuk_IKM722a_2kurs_project
                     O = BF.Deserialize(S);
                     D = O as Buffer;
                     if (D == null) break;
+                    
                     if (D.Key == N) // перевірка дорівнює чи номер пошуку номеру рядка в таблиці
-
                     {
                         string ST;
-                        ST = "record contains:" + (char)13 + "No" + Num + "Вхідні дані:" +
-
-                        D.Data + "Result:" + D.Result;
+                        ST = "record contains:" + (char)13 + "N" + Num + "Inputs data:" + D.Data + "Result:" + D.Result;
 
                         MessageBox.Show(ST, "Record found"); // Виведення на екран  повідомлення "запис містить", номер, вхідних даних і результат
 

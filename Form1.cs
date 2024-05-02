@@ -20,7 +20,7 @@ namespace Moskalchuk_IKM722a_2kurs_project
             InitializeComponent();
 
         }
-
+        
         private void tClock_Tick(object sender, EventArgs e)
         {
             tClock.Stop();
@@ -135,12 +135,12 @@ namespace Moskalchuk_IKM722a_2kurs_project
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (ofdOpen.ShowDialog() == DialogResult.OK) // Виклик діалогового вікна відкриття файлу
+            if (ofdOpen.ShowDialog() == DialogResult.OK) // Виклик діалогового вікна відкриття файу
             {
                 MajorObject.WriteOpenFileName(ofdOpen.FileName); // відкриття файлу M
                 MajorObject.ReadFromFile(dgwOpen); // читання даних з файлу
             }
-               MessageBox.Show(ofdOpen.FileName);
+               
             
         }
 
@@ -148,7 +148,6 @@ namespace Moskalchuk_IKM722a_2kurs_project
         {
             //4555856
         }
-
         
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -156,11 +155,6 @@ namespace Moskalchuk_IKM722a_2kurs_project
                 MajorObject.SaveToFile(); // зберегти дані в файл
             else
                 saveAsToolStripMenuItem_Click(sender, e); //
-        }
-
-        private void startToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
@@ -173,14 +167,18 @@ namespace Moskalchuk_IKM722a_2kurs_project
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MajorObject.Modify)
-                if (MessageBox.Show("Don't save!!. Continue out?", "ATTENTION",
-                MessageBoxButtons.YesNo) == DialogResult.No)
+                if (MessageBox.Show("Don't save!!. Continue out?", "ATTENTION",MessageBoxButtons.YesNo) == DialogResult.No)
                     e.Cancel = true; // припинити закриття
         }
 
         private void bSearch_Click(object sender, EventArgs e)
         {
-            MajorObject.Find(textBox1.Text); //пошук
+            MajorObject.Find(tbSearch.Text); //пошук
+        }
+
+        private void bSearch_Click_1(object sender, EventArgs e)
+        {
+            MajorObject.Find(tbSearch.Text); //пошук
         }
     }
 }

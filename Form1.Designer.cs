@@ -52,8 +52,8 @@
             this.ofdOpen = new System.Windows.Forms.OpenFileDialog();
             this.sfdSave = new System.Windows.Forms.SaveFileDialog();
             this.dgwOpen = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.bSearch = new System.Windows.Forms.Button();
+            this.tbSearch = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwOpen)).BeginInit();
             this.SuspendLayout();
@@ -189,7 +189,7 @@
             this.startToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F9;
             this.startToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.startToolStripMenuItem.Text = "Start";
-            this.startToolStripMenuItem.Click += new System.EventHandler(this.startToolStripMenuItem_Click);
+            this.startToolStripMenuItem.Click += new System.EventHandler(this.bStart_Click);
             // 
             // toolStripSeparator4
             // 
@@ -214,17 +214,19 @@
             // aboutProgramToolStripMenuItem
             // 
             this.aboutProgramToolStripMenuItem.Name = "aboutProgramToolStripMenuItem";
-            this.aboutProgramToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.aboutProgramToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutProgramToolStripMenuItem.Text = "About program";
             this.aboutProgramToolStripMenuItem.Click += new System.EventHandler(this.aboutProgramToolStripMenuItem_Click);
             // 
             // ofdOpen
             // 
+            this.ofdOpen.DefaultExt = "SoM";
             this.ofdOpen.FileName = "openFileDialog1";
             this.ofdOpen.Filter = "work files|*.SoM|All filles|*.*";
             // 
             // sfdSave
             // 
+            this.sfdSave.DefaultExt = "SoM";
             this.sfdSave.FileName = "saveFileDialog";
             this.sfdSave.Filter = "work files|*.SoM|All filles|*.*";
             // 
@@ -236,29 +238,30 @@
             this.dgwOpen.Size = new System.Drawing.Size(281, 184);
             this.dgwOpen.TabIndex = 4;
             // 
-            // button1
+            // bSearch
             // 
-            this.button1.Location = new System.Drawing.Point(694, 417);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bSearch.Location = new System.Drawing.Point(694, 417);
+            this.bSearch.Name = "bSearch";
+            this.bSearch.Size = new System.Drawing.Size(75, 23);
+            this.bSearch.TabIndex = 5;
+            this.bSearch.Text = "Find";
+            this.bSearch.UseVisualStyleBackColor = true;
+            this.bSearch.Click += new System.EventHandler(this.bSearch_Click_1);
             // 
-            // textBox1
+            // tbSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(655, 381);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(153, 20);
-            this.textBox1.TabIndex = 6;
+            this.tbSearch.Location = new System.Drawing.Point(655, 381);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(153, 20);
+            this.tbSearch.TabIndex = 6;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(904, 570);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.tbSearch);
+            this.Controls.Add(this.bSearch);
             this.Controls.Add(this.dgwOpen);
             this.Controls.Add(this.tbInput);
             this.Controls.Add(this.bStart);
@@ -303,8 +306,8 @@
         private System.Windows.Forms.OpenFileDialog ofdOpen;
         private System.Windows.Forms.SaveFileDialog sfdSave;
         private System.Windows.Forms.DataGridView dgwOpen;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button bSearch;
+        private System.Windows.Forms.TextBox tbSearch;
     }
 }
 
