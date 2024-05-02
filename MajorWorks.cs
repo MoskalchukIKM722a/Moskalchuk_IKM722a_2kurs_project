@@ -64,12 +64,13 @@ namespace Moskalchuk_IKM722a_2kurs_project
             {
                 Stream S; // створення потоку
                 if (File.Exists(this.SaveFileName))// існує файл?
-                {    
+                {
                     S = File.Open(this.SaveFileName, FileMode.Append);// Відкриття файлу для збереження
                 }
                 else
-                { 
+                {
                     S = File.Open(this.SaveFileName, FileMode.Create);// створити файл
+                }
                 Buffer D = new Buffer(); // створення буферної змінної
                 D.Data = this.Data;
                 D.Result = Convert.ToString(this.Result);
@@ -80,7 +81,7 @@ namespace Moskalchuk_IKM722a_2kurs_project
                 S.Flush(); // очищення буфера потоку
                 S.Close(); // закриття потоку
                 this.Modify = false; // Заборона повторного запису
-                }
+                
             }
             catch
             {
