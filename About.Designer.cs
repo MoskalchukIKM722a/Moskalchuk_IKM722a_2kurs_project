@@ -70,6 +70,7 @@
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // About
@@ -93,6 +94,6 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Timer tAbout;
         public System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Timer timer1;
+        public System.Windows.Forms.Timer timer1;
     }
 }
