@@ -76,6 +76,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -89,6 +90,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smaug-the-hobbit-the-hobbit-the-desolation-of-smaug-wallpaper-preview.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_2024-02-17_18-58-18.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fe7de0cea33aa28960bb68ac7b49a211.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_20211120_153754.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1642706576_5-chakiris-club-p-khobbit-pustosh-smauga-virezannie-stseni-f-6.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
