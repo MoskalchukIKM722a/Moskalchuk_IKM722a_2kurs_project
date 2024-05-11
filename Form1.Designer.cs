@@ -67,12 +67,20 @@
             this.Peek = new System.Windows.Forms.Button();
             this.Pop = new System.Windows.Forms.Button();
             this.Push = new System.Windows.Forms.Button();
-            this.Enqueue = new System.Windows.Forms.Button();
-            this.Dequeue = new System.Windows.Forms.Button();
-            this.Peek_q = new System.Windows.Forms.Button();
-            this.Queuetb = new System.Windows.Forms.TextBox();
-            this.LabelQueue = new System.Windows.Forms.Label();
             this.QueueText = new System.Windows.Forms.Label();
+            this.LabelQueue = new System.Windows.Forms.Label();
+            this.Queuetb = new System.Windows.Forms.TextBox();
+            this.Peek_q = new System.Windows.Forms.Button();
+            this.Dequeue = new System.Windows.Forms.Button();
+            this.Enqueue = new System.Windows.Forms.Button();
+            this.textFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.openToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -177,7 +185,9 @@
             this.workToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.startToolStripMenuItem,
             this.toolStripSeparator4,
-            this.onDrivesToolStripMenuItem});
+            this.onDrivesToolStripMenuItem,
+            this.toolStripSeparator7,
+            this.textFilesToolStripMenuItem});
             this.workToolStripMenuItem.Name = "workToolStripMenuItem";
             this.workToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.workToolStripMenuItem.Text = "Work";
@@ -186,19 +196,19 @@
             // 
             this.startToolStripMenuItem.Name = "startToolStripMenuItem";
             this.startToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F9;
-            this.startToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.startToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.startToolStripMenuItem.Text = "Start";
             this.startToolStripMenuItem.Click += new System.EventHandler(this.bStart_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(138, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
             // 
             // onDrivesToolStripMenuItem
             // 
             this.onDrivesToolStripMenuItem.Name = "onDrivesToolStripMenuItem";
-            this.onDrivesToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.onDrivesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.onDrivesToolStripMenuItem.Text = "About drives";
             this.onDrivesToolStripMenuItem.Click += new System.EventHandler(this.onDrivesToolStripMenuItem_Click);
             // 
@@ -296,6 +306,7 @@
             // tabPage2
             // 
             this.tabPage2.BackgroundImage = global::Moskalchuk_IKM722a_2kurs_project.Properties.Resources.smaug_the_hobbit_the_hobbit_the_desolation_of_smaug_wallpaper_preview;
+            this.tabPage2.Controls.Add(this.richTextBox1);
             this.tabPage2.Controls.Add(this.dgwOpen);
             this.tabPage2.Controls.Add(this.bSearch);
             this.tabPage2.Controls.Add(this.tbSearch);
@@ -312,7 +323,7 @@
             this.dgwOpen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwOpen.Location = new System.Drawing.Point(372, 6);
             this.dgwOpen.Name = "dgwOpen";
-            this.dgwOpen.Size = new System.Drawing.Size(358, 184);
+            this.dgwOpen.Size = new System.Drawing.Size(358, 205);
             this.dgwOpen.TabIndex = 4;
             this.dgwOpen.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwOpen_CellContentClick);
             // 
@@ -328,7 +339,7 @@
             // 
             // tbSearch
             // 
-            this.tbSearch.Location = new System.Drawing.Point(473, 207);
+            this.tbSearch.Location = new System.Drawing.Point(276, 359);
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.Size = new System.Drawing.Size(153, 20);
             this.tbSearch.TabIndex = 6;
@@ -428,42 +439,14 @@
             this.Push.UseVisualStyleBackColor = true;
             this.Push.Click += new System.EventHandler(this.Push_Click);
             // 
-            // Enqueue
+            // QueueText
             // 
-            this.Enqueue.Location = new System.Drawing.Point(13, 243);
-            this.Enqueue.Name = "Enqueue";
-            this.Enqueue.Size = new System.Drawing.Size(75, 23);
-            this.Enqueue.TabIndex = 0;
-            this.Enqueue.Text = "Enqueue";
-            this.Enqueue.UseVisualStyleBackColor = true;
-            this.Enqueue.Click += new System.EventHandler(this.Enqueue_Click);
-            // 
-            // Dequeue
-            // 
-            this.Dequeue.Location = new System.Drawing.Point(146, 243);
-            this.Dequeue.Name = "Dequeue";
-            this.Dequeue.Size = new System.Drawing.Size(75, 23);
-            this.Dequeue.TabIndex = 1;
-            this.Dequeue.Text = "Dequeue";
-            this.Dequeue.UseVisualStyleBackColor = true;
-            this.Dequeue.Click += new System.EventHandler(this.Dequeue_Click);
-            // 
-            // Peek_q
-            // 
-            this.Peek_q.Location = new System.Drawing.Point(282, 243);
-            this.Peek_q.Name = "Peek_q";
-            this.Peek_q.Size = new System.Drawing.Size(75, 23);
-            this.Peek_q.TabIndex = 2;
-            this.Peek_q.Text = "Peek_q";
-            this.Peek_q.UseVisualStyleBackColor = true;
-            this.Peek_q.Click += new System.EventHandler(this.Peek_q_Click);
-            // 
-            // Queuetb
-            // 
-            this.Queuetb.Location = new System.Drawing.Point(135, 193);
-            this.Queuetb.Name = "Queuetb";
-            this.Queuetb.Size = new System.Drawing.Size(100, 20);
-            this.Queuetb.TabIndex = 3;
+            this.QueueText.AutoSize = true;
+            this.QueueText.Location = new System.Drawing.Point(164, 85);
+            this.QueueText.Name = "QueueText";
+            this.QueueText.Size = new System.Drawing.Size(39, 13);
+            this.QueueText.TabIndex = 5;
+            this.QueueText.Text = "Queue";
             // 
             // LabelQueue
             // 
@@ -475,14 +458,98 @@
             this.LabelQueue.Text = "LabelQueue";
             this.LabelQueue.Click += new System.EventHandler(this.label2_Click);
             // 
-            // QueueText
+            // Queuetb
             // 
-            this.QueueText.AutoSize = true;
-            this.QueueText.Location = new System.Drawing.Point(164, 85);
-            this.QueueText.Name = "QueueText";
-            this.QueueText.Size = new System.Drawing.Size(39, 13);
-            this.QueueText.TabIndex = 5;
-            this.QueueText.Text = "Queue";
+            this.Queuetb.Location = new System.Drawing.Point(135, 193);
+            this.Queuetb.Name = "Queuetb";
+            this.Queuetb.Size = new System.Drawing.Size(100, 20);
+            this.Queuetb.TabIndex = 3;
+            // 
+            // Peek_q
+            // 
+            this.Peek_q.Location = new System.Drawing.Point(282, 243);
+            this.Peek_q.Name = "Peek_q";
+            this.Peek_q.Size = new System.Drawing.Size(75, 23);
+            this.Peek_q.TabIndex = 2;
+            this.Peek_q.Text = "Peek_q";
+            this.Peek_q.UseVisualStyleBackColor = true;
+            this.Peek_q.Click += new System.EventHandler(this.Peek_q_Click);
+            // 
+            // Dequeue
+            // 
+            this.Dequeue.Location = new System.Drawing.Point(146, 243);
+            this.Dequeue.Name = "Dequeue";
+            this.Dequeue.Size = new System.Drawing.Size(75, 23);
+            this.Dequeue.TabIndex = 1;
+            this.Dequeue.Text = "Dequeue";
+            this.Dequeue.UseVisualStyleBackColor = true;
+            this.Dequeue.Click += new System.EventHandler(this.Dequeue_Click);
+            // 
+            // Enqueue
+            // 
+            this.Enqueue.Location = new System.Drawing.Point(13, 243);
+            this.Enqueue.Name = "Enqueue";
+            this.Enqueue.Size = new System.Drawing.Size(75, 23);
+            this.Enqueue.TabIndex = 0;
+            this.Enqueue.Text = "Enqueue";
+            this.Enqueue.UseVisualStyleBackColor = true;
+            this.Enqueue.Click += new System.EventHandler(this.Enqueue_Click);
+            // 
+            // textFilesToolStripMenuItem
+            // 
+            this.textFilesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveToolStripMenuItem1,
+            this.toolStripSeparator6,
+            this.saveAsToolStripMenuItem1,
+            this.toolStripSeparator5,
+            this.openToolStripMenuItem1});
+            this.textFilesToolStripMenuItem.Name = "textFilesToolStripMenuItem";
+            this.textFilesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.textFilesToolStripMenuItem.Text = "Text files";
+            // 
+            // saveAsToolStripMenuItem1
+            // 
+            this.saveAsToolStripMenuItem1.Name = "saveAsToolStripMenuItem1";
+            this.saveAsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.saveAsToolStripMenuItem1.Text = "Save as";
+            this.saveAsToolStripMenuItem1.Click += new System.EventHandler(this.saveAsToolStripMenuItem1_Click);
+            // 
+            // saveToolStripMenuItem1
+            // 
+            this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
+            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem1.Text = "Save";
+            this.saveToolStripMenuItem1.Click += new System.EventHandler(this.saveToolStripMenuItem1_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(177, 6);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(177, 6);
+            // 
+            // openToolStripMenuItem1
+            // 
+            this.openToolStripMenuItem1.Name = "openToolStripMenuItem1";
+            this.openToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem1.Text = "Open";
+            this.openToolStripMenuItem1.Click += new System.EventHandler(this.openToolStripMenuItem1_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(177, 6);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(3, 6);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(335, 205);
+            this.richTextBox1.TabIndex = 7;
+            this.richTextBox1.Text = "";
             // 
             // Form1
             // 
@@ -563,6 +630,14 @@
         private System.Windows.Forms.Button Peek_q;
         private System.Windows.Forms.Button Dequeue;
         private System.Windows.Forms.Button Enqueue;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripMenuItem textFilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 namespace Moskalchuk_IKM722a_2kurs_project
@@ -14,6 +15,7 @@ namespace Moskalchuk_IKM722a_2kurs_project
     public partial class Form1 : Form
     {
         private bool Mode;
+        private SaveFileDialog sf;
         private MajorWorks MajorObject;
 
         ToolStripLabel dateLabel;
@@ -345,6 +347,45 @@ namespace Moskalchuk_IKM722a_2kurs_project
                 }
                 if (MajorObject.myQueue.Count == 0)
                     MessageBox.Show("\nQueue is empty!");
+            }
+        }
+
+       
+
+        private void saveAsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sf = new SaveFileDialog();
+
+            sf.Filter = @"Текстовий файл (*.txt)|*.txt|Текстові файли TXT(*.txt)|*.txt|CSV-файл (*.csv)|*.csv|Bin-файл (*.bin)|*.bin";
+
+
+            if (sf.ShowDialog() == DialogResult.OK)
+            {
+                MajorObject.WriteSaveTextFileName(sf.FileName);
+                MajorObject.SaveToTextFile(sf.FileName, dgwOpen);
+            }
+        }
+        private void saveToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (MajorObject.SaveTextFileNameExists())
+            { 
+                MajorObject.SaveToTextFile(MajorObject.ReadSaveTextFileName(), dgwOpen);
+            }
+            else
+            {
+                saveAsToolStripMenuItem1_Click(sender, e);
+            }
+        }
+
+        private void openToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog o = new OpenFileDialog();
+
+            o.Filter = @"Текстовий файл (*.txt)|*.txt|Текстовий файл TXT(*.txt)|*.txt|CSV-файл (*.csv)|*.csv|Bin-файл (*.bin)|*.bin";
+
+            if (o.ShowDialog() == DialogResult.OK)
+            {
+                richTextBox1.Text = File.ReadAllText(o.FileName, Encoding.Default);
             }
         }
     }
