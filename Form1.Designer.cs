@@ -44,6 +44,13 @@
             this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.onDrivesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.textFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.saveAsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.openToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ofdOpen = new System.Windows.Forms.OpenFileDialog();
@@ -56,6 +63,7 @@
             this.bStart = new System.Windows.Forms.Button();
             this.tbInput = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dgwOpen = new System.Windows.Forms.DataGridView();
             this.bSearch = new System.Windows.Forms.Button();
             this.tbSearch = new System.Windows.Forms.TextBox();
@@ -73,14 +81,24 @@
             this.Peek_q = new System.Windows.Forms.Button();
             this.Dequeue = new System.Windows.Forms.Button();
             this.Enqueue = new System.Windows.Forms.Button();
-            this.textFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.openToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.port = new System.IO.Ports.SerialPort(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -91,6 +109,9 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tClock
@@ -196,21 +217,69 @@
             // 
             this.startToolStripMenuItem.Name = "startToolStripMenuItem";
             this.startToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F9;
-            this.startToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.startToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.startToolStripMenuItem.Text = "Start";
             this.startToolStripMenuItem.Click += new System.EventHandler(this.bStart_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(138, 6);
             // 
             // onDrivesToolStripMenuItem
             // 
             this.onDrivesToolStripMenuItem.Name = "onDrivesToolStripMenuItem";
-            this.onDrivesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.onDrivesToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.onDrivesToolStripMenuItem.Text = "About drives";
             this.onDrivesToolStripMenuItem.Click += new System.EventHandler(this.onDrivesToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(138, 6);
+            // 
+            // textFilesToolStripMenuItem
+            // 
+            this.textFilesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveToolStripMenuItem1,
+            this.toolStripSeparator6,
+            this.saveAsToolStripMenuItem1,
+            this.toolStripSeparator5,
+            this.openToolStripMenuItem1});
+            this.textFilesToolStripMenuItem.Name = "textFilesToolStripMenuItem";
+            this.textFilesToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.textFilesToolStripMenuItem.Text = "Text files";
+            // 
+            // saveToolStripMenuItem1
+            // 
+            this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
+            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
+            this.saveToolStripMenuItem1.Text = "Save";
+            this.saveToolStripMenuItem1.Click += new System.EventHandler(this.saveToolStripMenuItem1_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(109, 6);
+            // 
+            // saveAsToolStripMenuItem1
+            // 
+            this.saveAsToolStripMenuItem1.Name = "saveAsToolStripMenuItem1";
+            this.saveAsToolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
+            this.saveAsToolStripMenuItem1.Text = "Save as";
+            this.saveAsToolStripMenuItem1.Click += new System.EventHandler(this.saveAsToolStripMenuItem1_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(109, 6);
+            // 
+            // openToolStripMenuItem1
+            // 
+            this.openToolStripMenuItem1.Name = "openToolStripMenuItem1";
+            this.openToolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
+            this.openToolStripMenuItem1.Text = "Open";
+            this.openToolStripMenuItem1.Click += new System.EventHandler(this.openToolStripMenuItem1_Click);
             // 
             // informationToolStripMenuItem
             // 
@@ -244,6 +313,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(0, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -317,6 +387,14 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Work with file";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(3, 6);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(335, 205);
+            this.richTextBox1.TabIndex = 7;
+            this.richTextBox1.Text = "";
             // 
             // dgwOpen
             // 
@@ -495,61 +573,220 @@
             this.Enqueue.UseVisualStyleBackColor = true;
             this.Enqueue.Click += new System.EventHandler(this.Enqueue_Click);
             // 
-            // textFilesToolStripMenuItem
+            // tabPage4
             // 
-            this.textFilesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveToolStripMenuItem1,
-            this.toolStripSeparator6,
-            this.saveAsToolStripMenuItem1,
-            this.toolStripSeparator5,
-            this.openToolStripMenuItem1});
-            this.textFilesToolStripMenuItem.Name = "textFilesToolStripMenuItem";
-            this.textFilesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.textFilesToolStripMenuItem.Text = "Text files";
+            this.tabPage4.Controls.Add(this.listBox1);
+            this.tabPage4.Controls.Add(this.groupBox2);
+            this.tabPage4.Controls.Add(this.groupBox1);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(733, 457);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Com Port";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // saveAsToolStripMenuItem1
+            // groupBox1
             // 
-            this.saveAsToolStripMenuItem1.Name = "saveAsToolStripMenuItem1";
-            this.saveAsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.saveAsToolStripMenuItem1.Text = "Save as";
-            this.saveAsToolStripMenuItem1.Click += new System.EventHandler(this.saveAsToolStripMenuItem1_Click);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Location = new System.Drawing.Point(9, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
             // 
-            // saveToolStripMenuItem1
+            // groupBox2
             // 
-            this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
-            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.saveToolStripMenuItem1.Text = "Save";
-            this.saveToolStripMenuItem1.Click += new System.EventHandler(this.saveToolStripMenuItem1_Click);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.comboBox6);
+            this.groupBox2.Controls.Add(this.comboBox5);
+            this.groupBox2.Controls.Add(this.comboBox4);
+            this.groupBox2.Controls.Add(this.comboBox3);
+            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Enabled = false;
+            this.groupBox2.Location = new System.Drawing.Point(8, 110);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 337);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Port configuration";
             // 
-            // toolStripSeparator6
+            // comboBox1
             // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(177, 6);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(26, 48);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 0;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // toolStripSeparator7
+            // comboBox2
             // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(177, 6);
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "75",
+            "110",
+            "134",
+            "150",
+            "300",
+            "600",
+            "1200",
+            "1800",
+            "2400",
+            "4800",
+            "7200",
+            "9600",
+            "14400",
+            "19200",
+            "38400",
+            "57600",
+            "115200",
+            "128000"});
+            this.comboBox2.Location = new System.Drawing.Point(27, 38);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 0;
+            this.comboBox2.Text = "115200";
             // 
-            // openToolStripMenuItem1
+            // comboBox3
             // 
-            this.openToolStripMenuItem1.Name = "openToolStripMenuItem1";
-            this.openToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.openToolStripMenuItem1.Text = "Open";
-            this.openToolStripMenuItem1.Click += new System.EventHandler(this.openToolStripMenuItem1_Click);
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"});
+            this.comboBox3.Location = new System.Drawing.Point(27, 90);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.TabIndex = 1;
+            this.comboBox3.Text = "8";
             // 
-            // toolStripSeparator5
+            // comboBox4
             // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(177, 6);
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Chet",
+            "Odd number",
+            "Not",
+            "Marker",
+            "Space bar"});
+            this.comboBox4.Location = new System.Drawing.Point(27, 144);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(121, 21);
+            this.comboBox4.TabIndex = 2;
+            this.comboBox4.Text = "No";
             // 
-            // richTextBox1
+            // comboBox5
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(3, 6);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(335, 205);
-            this.richTextBox1.TabIndex = 7;
-            this.richTextBox1.Text = "";
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Items.AddRange(new object[] {
+            "1",
+            "1.5",
+            "2",
+            "No"});
+            this.comboBox5.Location = new System.Drawing.Point(27, 200);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(121, 21);
+            this.comboBox5.TabIndex = 3;
+            this.comboBox5.Text = "1";
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Items.AddRange(new object[] {
+            "Xon/Xoff",
+            "hardware",
+            "No"});
+            this.comboBox6.Location = new System.Drawing.Point(27, 260);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(121, 21);
+            this.comboBox6.TabIndex = 4;
+            this.comboBox6.Text = "No";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(215, 9);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(507, 433);
+            this.listBox1.TabIndex = 2;
+            // 
+            // button2
+            // 
+            this.button2.Enabled = false;
+            this.button2.Location = new System.Drawing.Point(46, 308);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Start";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // port
+            // 
+            this.port.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.port_DataReceived);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 244);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "flow control";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(24, 184);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Stop bits";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(24, 128);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(32, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "parity";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(27, 71);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "data bits";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(24, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Speed ( bit/s )";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(23, 32);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 13);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Choise port";
             // 
             // Form1
             // 
@@ -579,6 +816,11 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -638,6 +880,24 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem1;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.IO.Ports.SerialPort port;
     }
 }
 
