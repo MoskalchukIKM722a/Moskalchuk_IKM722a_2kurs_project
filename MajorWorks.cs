@@ -44,7 +44,11 @@ namespace Moskalchuk_IKM722a_2kurs_project
         }
         public void Task() 
         {
-            string[] dataParts = Data.Split(new char[] { ',', ' ', '-' }, StringSplitOptions.RemoveEmptyEntries);
+            this.Result = null;
+            string[] dataParts = Data.Split(new char[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+          if(dataParts.Length < 10)
+          { 
 
             // Зберегти числа у масив:
             int[] NData = new int[dataParts.Length];
@@ -54,7 +58,7 @@ namespace Moskalchuk_IKM722a_2kurs_project
             }
 
             // Знайти всі піки:
-            for (int i = 1; i < NData.Length - 1; i++)
+            for (int i = 1; i < NData.Length ; i++)
             {
                 if ((NData[i - 1] >= 0 && NData[i] < 0) || (NData[i - 1] < 0 && NData[i] >= 0))
                 {
@@ -62,7 +66,12 @@ namespace Moskalchuk_IKM722a_2kurs_project
                     this.Result += $"Peak is in position {i}: {NData[i]}\n"; // Додати результат до змінної
                 }
             }
-            this.Modify = true; // Дозвіл запису
+               this.Modify = true; // Дозвіл запису
+          }  
+          else
+          {
+                MessageBox.Show("Enter up to 10 charecters", "ATTENTION");
+          }
         }
     
      private string SaveFileName;// ім’я файлу для запису
