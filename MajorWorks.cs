@@ -44,7 +44,7 @@ namespace Moskalchuk_IKM722a_2kurs_project
         }
         public void Task() 
         {
-            string[] dataParts = Data.Split(new char[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] dataParts = Data.Split(new char[] { ',', ' ', '-' }, StringSplitOptions.RemoveEmptyEntries);
 
             // Зберегти числа у масив:
             int[] NData = new int[dataParts.Length];
