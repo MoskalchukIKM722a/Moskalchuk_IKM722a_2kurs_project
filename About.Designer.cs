@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tAbout = new System.Windows.Forms.Timer(this.components);
@@ -51,10 +52,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(308, 119);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(182, 91);
+            this.label1.Size = new System.Drawing.Size(358, 130);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Developed\r\nKurs progect\r\nStudent from group IKM-722a\r\nMoskalchuk Oleksandr Oleksi" +
-    "yovych\r\n\r\nText task\r\nText\r\n";
+            this.label1.Text = resources.GetString("label1.Text");
             // 
             // tAbout
             // 

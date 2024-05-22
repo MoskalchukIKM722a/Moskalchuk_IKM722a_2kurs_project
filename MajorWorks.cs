@@ -44,13 +44,23 @@ namespace Moskalchuk_IKM722a_2kurs_project
         }
         public void Task() 
         {
-            if (this.Data.Length> 5)
+            string[] dataParts = Data.Split(new char[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            // Зберегти числа у масив:
+            int[] NData = new int[dataParts.Length];
+            for (int i = 0; i < dataParts.Length; i++)
             {
-                this.Result = Convert.ToString (true);
+                NData[i] = int.Parse(dataParts[i]);
             }
-            else
+
+            // Знайти всі піки:
+            for (int i = 1; i < NData.Length - 1; i++)
             {
-                this.Result = Convert.ToString(false);
+                if ((NData[i - 1] >= 0 && NData[i] < 0) || (NData[i - 1] < 0 && NData[i] >= 0))
+                {
+                    
+                    this.Result += $"Peak is in position {i}: {NData[i]}\n"; // Додати результат до змінної
+                }
             }
             this.Modify = true; // Дозвіл запису
         }

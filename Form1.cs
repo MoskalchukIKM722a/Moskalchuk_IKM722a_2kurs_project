@@ -106,7 +106,7 @@ namespace Moskalchuk_IKM722a_2kurs_project
         {
             tClock.Stop();
             tClock.Start();
-            if ((e.KeyChar >= '0') & (e.KeyChar <= '9') | (e.KeyChar == (char)8))
+            if ((e.KeyChar >= '0') & (e.KeyChar <= '9') || (e.KeyChar == (char)8) || e.KeyChar == ','|| e.KeyChar == '-')
             {
                 return;
             }
